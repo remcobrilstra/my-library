@@ -6,6 +6,7 @@ import { BookDetailPage } from './pages/BookDetailPage';
 import { FavoritesPage } from './pages/FavoritesPage';
 import { FinishedPage } from './pages/FinishedPage';
 import { MyBooksPage } from './pages/MyBooksPage';
+import { TimelinePage } from './pages/TimelinePage';
 import { WishlistPage } from './pages/WishlistPage';
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
     <HashRouter>
       <Routes>
         <Route element={<AppLayout />}>
-          <Route index element={<MyBooksPage />} />
+          <Route index element={<TimelinePage />} />
+          <Route path="my-books" element={<MyBooksPage />} />
           <Route path="finished" element={<FinishedPage />} />
           <Route path="wishlist" element={<WishlistPage />} />
           <Route path="favorites" element={<FavoritesPage />} />
