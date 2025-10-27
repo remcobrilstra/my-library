@@ -87,7 +87,7 @@ export function BookDetailPage() {
             </div>
           ) : (
             <p className="text-sm text-muted-foreground">
-              No review yet. Add markdown content inside the book file to see it here.
+              No review yet.
             </p>
           )}
         </article>

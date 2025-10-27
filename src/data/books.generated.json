@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-27T20:06:57.944Z",
+  "generatedAt": "2025-10-27T20:26:12.605Z",
   "books": [
     {
       "id": "2025-a-brief-history-of-intelligence",
@@ -13,9 +13,11 @@
       "rating": 5,
       "favorite": true,
       "finishedDate": "2025-07-12",
+      "coverImage": "/images/a-brief-history-of-intelligence.jpg",
+      "amazonUrl": "https://www.amazon.com/Brief-History-Intelligence-Humans-Breakthroughs/dp/0063286343",
       "review": "",
       "hasReview": false,
-      "updatedAt": "2025-10-27T12:47:28.849Z"
+      "updatedAt": "2025-10-27T20:16:43.840Z"
     },
     {
       "id": "2025-atomic-habits",
@@ -29,9 +31,10 @@
       ],
       "rating": 5,
       "favorite": true,
+      "coverImage": "/images/atomic-habits.jpg",
       "review": "",
       "hasReview": false,
-      "updatedAt": "2025-10-27T12:47:28.393Z"
+      "updatedAt": "2025-10-27T20:12:46.785Z"
     },
     {
       "id": "2025-rich-dad-poor-dad",
@@ -44,9 +47,11 @@
       ],
       "rating": 4,
       "coverImage": "/images/rich-dad-poor-dad.jpg",
+      "amazonUrl": "https://www.amazon.com/Rich-Dad-Poor-Teach-Middle/dp/1612680194",
+      "bolUrl": "https://www.bol.com/nl/nl/f/rich-dad-poor-dad/9300000020235982/",
       "review": "",
       "hasReview": false,
-      "updatedAt": "2025-10-27T20:06:27.482Z"
+      "updatedAt": "2025-10-27T20:25:48.137Z"
     },
     {
       "id": "2025-zero-to-one",
@@ -60,9 +65,10 @@
       "rating": 3,
       "favorite": false,
       "finishedDate": "2025-10-26",
+      "coverImage": "/images/zero-to-one.jpg",
       "review": "",
       "hasReview": false,
-      "updatedAt": "2025-10-27T12:47:25.940Z"
+      "updatedAt": "2025-10-27T20:13:25.489Z"
     }
   ]
 }
