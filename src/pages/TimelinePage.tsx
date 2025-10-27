@@ -21,9 +21,9 @@ function TimelineItem({ book, isReading }: { book: BookRecord; isReading: boolea
   const coverImageSrc = resolveAssetPath(book.coverImage);
 
   return (
-    <div className="group relative flex gap-6 pb-12">
-      {/* Timeline line and dot */}
-      <div className="relative flex flex-col items-center">
+    <div className="group relative pb-12 md:flex md:gap-6">
+      {/* Timeline line and dot - desktop: left side, mobile: top center partially overlapping card */}
+      <div className="relative -mb-6 flex justify-center md:mb-0 md:flex-col md:items-center">
         <div
           className={cn(
             'z-10 flex h-12 w-12 items-center justify-center rounded-full border-4 border-background shadow-lg transition-all duration-300 group-hover:scale-110',
@@ -42,7 +42,8 @@ function TimelineItem({ book, isReading }: { book: BookRecord; isReading: boolea
             <Clock className="h-6 w-6 text-white" />
           )}
         </div>
-        <div className="absolute top-12 h-full w-0.5 bg-gradient-to-b from-muted-foreground/30 to-transparent" />
+        {/* Timeline line - hidden on mobile, visible on desktop */}
+        <div className="absolute top-12 hidden h-full w-0.5 bg-gradient-to-b from-muted-foreground/30 to-transparent md:block" />
       </div>
 
       {/* Content card */}
@@ -56,7 +57,7 @@ function TimelineItem({ book, isReading }: { book: BookRecord; isReading: boolea
             isReading && 'border-amber-400/50 bg-gradient-to-br from-amber-50/50 to-orange-50/50 dark:from-amber-950/20 dark:to-orange-950/20'
           )}
         >
-          <div className="flex gap-4 p-5">
+          <div className="flex gap-4 p-5 pt-8 md:pt-5">
             {/* Book cover */}
             {coverImageSrc && (
               <div className="flex-shrink-0">
