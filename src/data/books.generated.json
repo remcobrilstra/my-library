@@ -1,68 +1,68 @@
 {
-  "generatedAt": "2025-10-27T11:23:33.853Z",
+  "generatedAt": "2025-10-27T20:06:57.944Z",
   "books": [
     {
-      "id": "legends-and-lattes",
-      "slug": "legends-and-lattes",
-      "title": "Legends & Lattes",
-      "author": "Travis Baldree",
+      "id": "2025-a-brief-history-of-intelligence",
+      "slug": "2025-a-brief-history-of-intelligence",
+      "title": "A Brief History of Intelligence",
+      "author": "Max S. Bennett",
       "status": "finished",
       "tags": [
-        "cozy-fantasy",
-        "slice-of-life"
-      ],
-      "rating": 4,
-      "favorite": true,
-      "finishedDate": "2024-09-02",
-      "review": "A warm and cozy fantasy about opening a coffee shop. Perfect for rainy afternoons when you want low stakes comfort.",
-      "hasReview": true,
-      "updatedAt": "2025-10-27T10:34:01.501Z"
-    },
-    {
-      "id": "project-hail-mary",
-      "slug": "project-hail-mary",
-      "title": "Project Hail Mary",
-      "author": "Andy Weir",
-      "status": "finished",
-      "tags": [
-        "science-fiction",
-        "adventure"
+        "AI"
       ],
       "rating": 5,
       "favorite": true,
-      "finishedDate": "2024-08-12",
-      "review": "## A delightful return to hard sci-fi\r\n\r\nAndy Weir is at his best when he strands a scientist in an impossible situation. *Project Hail Mary* doubles down on that formula with earnest characters, clever problem solving, and a surprisingly heartfelt friendship.\r\n\r\n- Lots of crunchy science without getting bogged down.\r\n- The pacing never lets up even on a re-read.\r\n- The ending left me grinning for days.",
-      "hasReview": true,
-      "updatedAt": "2025-10-27T10:34:01.359Z"
+      "finishedDate": "2025-07-12",
+      "review": "",
+      "hasReview": false,
+      "updatedAt": "2025-10-27T12:47:28.849Z"
     },
     {
-      "id": "the-future-is-analog",
-      "slug": "the-future-is-analog",
-      "title": "The Future Is Analog",
-      "author": "David Sax",
-      "status": "reading",
+      "id": "2025-atomic-habits",
+      "slug": "2025-atomic-habits",
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "status": "finished",
       "tags": [
-        "non-fiction",
-        "technology"
+        "self improvement",
+        "time management"
       ],
-      "review": "Currently reading. So far it's a thoughtful look at the human side of digital transformation.",
-      "hasReview": true,
-      "updatedAt": "2025-10-27T10:34:01.630Z"
+      "rating": 5,
+      "favorite": true,
+      "review": "",
+      "hasReview": false,
+      "updatedAt": "2025-10-27T12:47:28.393Z"
     },
     {
-      "id": "murderbot-diaries",
-      "slug": "murderbot-diaries",
-      "title": "The Murderbot Diaries",
-      "author": "Martha Wells",
-      "status": "wishlist",
+      "id": "2025-rich-dad-poor-dad",
+      "slug": "2025-rich-dad-poor-dad",
+      "title": "Rich dad poor dad",
+      "author": "Robert T. Kiyosaki",
+      "status": "finished",
       "tags": [
-        "science-fiction",
-        "novellas"
+        "finance"
       ],
+      "rating": 4,
+      "coverImage": "/images/rich-dad-poor-dad.jpg",
+      "review": "",
+      "hasReview": false,
+      "updatedAt": "2025-10-27T20:06:27.482Z"
+    },
+    {
+      "id": "2025-zero-to-one",
+      "slug": "2025-zero-to-one",
+      "title": "Zero to one",
+      "author": "Peter Thiel",
+      "status": "finished",
+      "tags": [
+        "business"
+      ],
+      "rating": 3,
       "favorite": false,
-      "review": "On the wishlist after hearing rave reviews from friends who love sarcastic protagonists.",
-      "hasReview": true,
-      "updatedAt": "2025-10-27T10:34:01.787Z"
+      "finishedDate": "2025-10-26",
+      "review": "",
+      "hasReview": false,
+      "updatedAt": "2025-10-27T12:47:25.940Z"
     }
   ]
 }

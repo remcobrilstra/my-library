@@ -2,7 +2,7 @@ import React from 'react';
 import { CalendarRange, CheckCircle2, Crown, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-import { cn } from '../../lib/utils';
+import { cn, resolveAssetPath } from '../../lib/utils';
 import { type BookRecord } from '../../types/book';
 import { Badge } from '../ui/badge';
 import {
@@ -23,6 +23,7 @@ interface BookCardProps {
 
 export function BookCard({ book, layout = 'grid', highlightFavorite = true }: BookCardProps) {
   const isFavorite = Boolean(book.favorite && highlightFavorite);
+  const coverImageSrc = resolveAssetPath(book.coverImage);
 
   return (
     <Link
@@ -34,11 +35,27 @@ export function BookCard({ book, layout = 'grid', highlightFavorite = true }: Bo
     >
       <Card
         className={cn(
-          'h-full overflow-hidden border border-border/70 transition group-hover:border-primary/60 group-hover:shadow-md',
-          layout === 'list' && 'flex flex-col sm:flex-row'
+          'flex h-full flex-col overflow-hidden border border-border/70 transition group-hover:border-primary/60 group-hover:shadow-md',
+          layout === 'list' && 'sm:flex-row'
         )}
       >
-        <CardHeader className="space-y-3 pb-4">
+        {coverImageSrc && (
+          <div
+            className={cn(
+              'relative aspect-[3/4] w-full overflow-hidden border-b border-border/80 bg-muted/60',
+              layout === 'list' && 'sm:h-full sm:w-44 sm:flex-shrink-0 sm:border-b-0 sm:border-r sm:border-border/80'
+            )}
+          >
+            <img
+              src={coverImageSrc}
+              alt={`Cover of ${book.title}`}
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+        )}
+        <div className="flex flex-1 flex-col">
+          <CardHeader className="space-y-3 pb-4">
           <div className="flex items-start justify-between gap-3">
             <CardTitle className="flex items-center gap-2 text-xl font-semibold leading-tight">
               <span>{book.title}</span>
@@ -64,10 +81,11 @@ export function BookCard({ book, layout = 'grid', highlightFavorite = true }: Bo
               </span>
             </div>
           )}
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="flex flex-wrap items-center gap-3">
-            <RatingStars rating={book.rating} />
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="flex items-center">
+              <RatingStars rating={book.rating} />
+            </div>
             {book.tags.length > 0 && (
               <div className="flex flex-wrap gap-2">
                 {book.tags.map((tag) => (
@@ -78,16 +96,16 @@ export function BookCard({ book, layout = 'grid', highlightFavorite = true }: Bo
                 ))}
               </div>
             )}
-          </div>
-          <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
-            {book.hasReview && <Badge variant="secondary">Review available</Badge>}
-            {book.pages && <span>{book.pages} pages</span>}
-          </div>
-        </CardContent>
-        <CardFooter className="flex flex-wrap gap-2 text-xs text-muted-foreground">
-          {book.isbn && <span className="font-mono">ISBN {book.isbn}</span>}
-          {book.updatedAt && <span>Updated {new Date(book.updatedAt).toLocaleDateString()}</span>}
-        </CardFooter>
+            <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+              {book.hasReview && <Badge variant="secondary">Review available</Badge>}
+              {book.pages && <span>{book.pages} pages</span>}
+            </div>
+          </CardContent>
+          <CardFooter className="mt-auto flex flex-wrap gap-2 text-xs text-muted-foreground">
+            {book.isbn && <span className="font-mono">ISBN {book.isbn}</span>}
+            {book.updatedAt && <span>Updated {new Date(book.updatedAt).toLocaleDateString()}</span>}
+          </CardFooter>
+        </div>
       </Card>
     </Link>
   );

@@ -20,6 +20,9 @@ const frontMatterSchema = z
     startedDate: z.union([z.string(), z.date()]).optional(),
     finishedDate: z.union([z.string(), z.date()]).optional(),
     isbn: z.string().optional(),
+    coverImage: z.string().min(1).optional(),
+    amazonUrl: z.string().url().optional(),
+    bolUrl: z.string().url().optional(),
     published: z.string().optional(),
     pages: z.coerce.number().int().positive().optional(),
   })
@@ -92,6 +95,10 @@ async function ensureSampleContent() {
   tags:
     - science-fiction
     - adventure
+  isbn: 9780593135204
+  coverImage: https://placehold.co/400x600?text=Project+Hail+Mary
+  amazonUrl: https://www.amazon.com/dp/0593135202
+  bolUrl: https://www.bol.com/nl/nl/p/project-hail-mary/9300000028735596
   finishedDate: 2024-08-12
   ---
   ## A delightful return to hard sci-fi
@@ -114,6 +121,10 @@ async function ensureSampleContent() {
     - cozy-fantasy
     - slice-of-life
   favorite: true
+  isbn: 9781250886088
+  coverImage: https://placehold.co/400x600?text=Legends+%26+Lattes
+  amazonUrl: https://www.amazon.com/dp/1250886081
+  bolUrl: https://www.bol.com/nl/nl/p/legends-lattes/9300000059018247
   finishedDate: 2024-09-02
   ---
   A warm and cozy fantasy about opening a coffee shop. Perfect for rainy afternoons when you want low stakes comfort.
@@ -128,6 +139,10 @@ async function ensureSampleContent() {
   tags:
     - non-fiction
     - technology
+  isbn: 9781541701310
+  coverImage: https://placehold.co/400x600?text=The+Future+Is+Analog
+  amazonUrl: https://www.amazon.com/dp/1541701313
+  bolUrl: https://www.bol.com/nl/nl/p/the-future-is-analog/9300000113614935
   ---
   Currently reading. So far it's a thoughtful look at the human side of digital transformation.
   `,
@@ -142,6 +157,10 @@ async function ensureSampleContent() {
   tags:
     - science-fiction
     - novellas
+  isbn: 9781250214713
+  coverImage: https://placehold.co/400x600?text=Murderbot+Diaries
+  amazonUrl: https://www.amazon.com/dp/1250214718
+  bolUrl: https://www.bol.com/nl/nl/p/the-murderbot-diaries/9300000027871278
   ---
   On the wishlist after hearing rave reviews from friends who love sarcastic protagonists.
   `,

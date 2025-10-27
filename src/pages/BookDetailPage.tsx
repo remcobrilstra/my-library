@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, CalendarRange, Hash, Tag } from 'lucide-react';
+import { ArrowLeft, CalendarRange, ExternalLink, Hash, Tag } from 'lucide-react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -11,6 +11,7 @@ import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
 import { Separator } from '../components/ui/separator';
 import { useBooksContext } from '../contexts/BooksContext';
+import { resolveAssetPath } from '../lib/utils';
 
 function formatTag(tag: string) {
   return tag.replace(/-/g, ' ');
@@ -33,6 +34,7 @@ export function BookDetailPage() {
     return null;
   }
 
+  const coverImageSrc = resolveAssetPath(book.coverImage);
   const relatedBooks = books
     .filter((candidate) => candidate.slug !== book.slug && candidate.tags.some((tag) => book.tags.includes(tag)))
     .slice(0, 3);
@@ -91,6 +93,41 @@ export function BookDetailPage() {
         </article>
 
         <aside className="space-y-4 rounded-lg border bg-card/80 p-6">
+          {coverImageSrc && (
+            <div className="overflow-hidden rounded-md border border-border/60">
+              <img
+                src={coverImageSrc}
+                alt={`Cover of ${book.title}`}
+                className="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          )}
+
+          {(book.amazonUrl || book.bolUrl) && (
+            <div className="space-y-2">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Buy</h3>
+              <div className="flex flex-col gap-2">
+                {book.amazonUrl && (
+                  <Button asChild size="sm" variant="secondary" className="justify-start gap-2">
+                    <a href={book.amazonUrl} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="h-3 w-3" aria-hidden="true" />
+                      Amazon.com
+                    </a>
+                  </Button>
+                )}
+                {book.bolUrl && (
+                  <Button asChild size="sm" variant="secondary" className="justify-start gap-2">
+                    <a href={book.bolUrl} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="h-3 w-3" aria-hidden="true" />
+                      bol.com
+                    </a>
+                  </Button>
+                )}
+              </div>
+            </div>
+          )}
+
           <div className="space-y-2">
             <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Details</h3>
             <dl className="space-y-2 text-sm text-muted-foreground">

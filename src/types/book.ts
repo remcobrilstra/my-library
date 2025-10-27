@@ -12,6 +12,9 @@ export interface BookRecord {
   startedDate?: string;
   finishedDate?: string;
   isbn?: string;
+  coverImage?: string;
+  amazonUrl?: string;
+  bolUrl?: string;
   published?: string;
   pages?: number;
   review: string;
