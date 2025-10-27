@@ -93,17 +93,20 @@ function TimelineItem({ book, isReading }: { book: BookRecord; isReading: boolea
 
               {book.rating && (
                 <div className="flex items-center gap-1">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className={cn(
-                        'h-4 w-4',
-                        i < book.rating!
-                          ? 'fill-amber-400 text-amber-400'
-                          : 'fill-muted text-muted'
-                      )}
-                    />
-                  ))}
+                  {Array.from({ length: 5 }).map((_, i) => {
+                    const rating = book.rating || 0;
+                    return (
+                      <Star
+                        key={i}
+                        className={cn(
+                          'h-4 w-4',
+                          i < rating
+                            ? 'fill-amber-400 text-amber-400'
+                            : 'fill-muted text-muted'
+                        )}
+                      />
+                    );
+                  })}
                   <span className="ml-2 text-sm font-medium">{book.rating}/5</span>
                 </div>
               )}
