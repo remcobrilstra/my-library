@@ -6,7 +6,7 @@ import { useBooksContext } from '../contexts/BooksContext';
 import { BookRecord } from '../types/book';
 import { Badge } from '../components/ui/badge';
 import { Card } from '../components/ui/card';
-import { cn } from '../lib/utils';
+import { cn, resolveAssetPath, formatTag } from '../lib/utils';
 
 function TimelineItem({ book, isReading }: { book: BookRecord; isReading: boolean }) {
   const displayDate = book.finishedDate || book.startedDate;
@@ -17,6 +17,8 @@ function TimelineItem({ book, isReading }: { book: BookRecord; isReading: boolea
         day: 'numeric',
       })
     : null;
+
+  const coverImageSrc = resolveAssetPath(book.coverImage);
 
   return (
     <div className="group relative flex gap-6 pb-12">
@@ -56,11 +58,11 @@ function TimelineItem({ book, isReading }: { book: BookRecord; isReading: boolea
         >
           <div className="flex gap-4 p-5">
             {/* Book cover */}
-            {book.coverImage && (
+            {coverImageSrc && (
               <div className="flex-shrink-0">
                 <div className="relative h-32 w-24 overflow-hidden rounded-lg border shadow-md transition-transform group-hover:scale-105">
                   <img
-                    src={book.coverImage}
+                    src={coverImageSrc}
                     alt={book.title}
                     className="h-full w-full object-cover"
                   />
@@ -91,22 +93,19 @@ function TimelineItem({ book, isReading }: { book: BookRecord; isReading: boolea
                 </div>
               )}
 
-              {book.rating && (
+              {book.rating !== undefined && (
                 <div className="flex items-center gap-1">
-                  {Array.from({ length: 5 }).map((_, i) => {
-                    const rating = book.rating || 0;
-                    return (
-                      <Star
-                        key={i}
-                        className={cn(
-                          'h-4 w-4',
-                          i < rating
-                            ? 'fill-amber-400 text-amber-400'
-                            : 'fill-muted text-muted'
-                        )}
-                      />
-                    );
-                  })}
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star
+                      key={i}
+                      className={cn(
+                        'h-4 w-4',
+                        i < book.rating!
+                          ? 'fill-amber-400 text-amber-400'
+                          : 'fill-muted text-muted'
+                      )}
+                    />
+                  ))}
                   <span className="ml-2 text-sm font-medium">{book.rating}/5</span>
                 </div>
               )}
@@ -115,7 +114,7 @@ function TimelineItem({ book, isReading }: { book: BookRecord; isReading: boolea
                 <div className="flex flex-wrap gap-2">
                   {book.tags.map((tag) => (
                     <Badge key={tag} variant="secondary" className="capitalize">
-                      {tag.replace(/-/g, ' ')}
+                      {formatTag(tag)}
                     </Badge>
                   ))}
                 </div>

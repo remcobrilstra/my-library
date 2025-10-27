@@ -7,6 +7,7 @@ import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { Separator } from '../components/ui/separator';
 import { useBooksContext } from '../contexts/BooksContext';
+import { formatTag } from '../lib/utils';
 
 export function MyBooksPage() {
   const { books, counts } = useBooksContext();
@@ -77,7 +78,7 @@ export function MyBooksPage() {
                   onClick={() => handleTagToggle(tag)}
                   className="capitalize"
                 >
-                  <span>{tag.replace(/-/g, ' ')}</span>
+                  <span>{formatTag(tag)}</span>
                   <Badge variant={activeTag === tag ? 'secondary' : 'outline'} className="ml-2">
                     {total}
                   </Badge>
