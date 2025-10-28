@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-27T20:26:12.605Z",
+  "generatedAt": "2025-10-27T21:47:52.882Z",
   "books": [
     {
       "id": "2025-a-brief-history-of-intelligence",
@@ -17,7 +17,7 @@
       "amazonUrl": "https://www.amazon.com/Brief-History-Intelligence-Humans-Breakthroughs/dp/0063286343",
       "review": "",
       "hasReview": false,
-      "updatedAt": "2025-10-27T20:16:43.840Z"
+      "updatedAt": "2025-10-27T21:41:18.294Z"
     },
     {
       "id": "2025-atomic-habits",
@@ -34,7 +34,7 @@
       "coverImage": "/images/atomic-habits.jpg",
       "review": "",
       "hasReview": false,
-      "updatedAt": "2025-10-27T20:12:46.785Z"
+      "updatedAt": "2025-10-27T21:41:18.294Z"
     },
     {
       "id": "2025-rich-dad-poor-dad",
@@ -51,7 +51,24 @@
       "bolUrl": "https://www.bol.com/nl/nl/f/rich-dad-poor-dad/9300000020235982/",
       "review": "",
       "hasReview": false,
-      "updatedAt": "2025-10-27T20:25:48.137Z"
+      "updatedAt": "2025-10-27T21:41:18.294Z"
+    },
+    {
+      "id": "2025-thinking-fast-and-slow",
+      "slug": "2025-thinking-fast-and-slow",
+      "title": "Thinking, Fast and Slow",
+      "author": "Daniel Kahneman",
+      "status": "reading",
+      "tags": [
+        "psychology",
+        "decision making"
+      ],
+      "favorite": false,
+      "startedDate": "2025-10-15",
+      "coverImage": "/images/thinking-fast-and-slow.jpg",
+      "review": "",
+      "hasReview": false,
+      "updatedAt": "2025-10-27T21:41:18.294Z"
     },
     {
       "id": "2025-zero-to-one",
@@ -68,7 +85,7 @@
       "coverImage": "/images/zero-to-one.jpg",
       "review": "",
       "hasReview": false,
-      "updatedAt": "2025-10-27T20:13:25.489Z"
+      "updatedAt": "2025-10-27T21:41:18.294Z"
     }
   ]
 }

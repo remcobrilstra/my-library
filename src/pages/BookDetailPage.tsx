@@ -11,11 +11,7 @@ import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
 import { Separator } from '../components/ui/separator';
 import { useBooksContext } from '../contexts/BooksContext';
-import { resolveAssetPath } from '../lib/utils';
-
-function formatTag(tag: string) {
-  return tag.replace(/-/g, ' ');
-}
+import { resolveAssetPath, formatTag } from '../lib/utils';
 
 export function BookDetailPage() {
   const { slug } = useParams<{ slug: string }>();
