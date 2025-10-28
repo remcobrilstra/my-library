@@ -2,7 +2,7 @@ import React from 'react';
 import { CalendarRange, CheckCircle2, Crown, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-import { cn, resolveAssetPath } from '../../lib/utils';
+import { cn, resolveAssetPath, formatTag } from '../../lib/utils';
 import { type BookRecord } from '../../types/book';
 import { Badge } from '../ui/badge';
 import {
@@ -70,7 +70,7 @@ export function BookCard({ book, layout = 'grid', highlightFavorite = true }: Bo
       {book.tags.map((tag) => (
         <Badge key={tag} variant="outline" className="inline-flex items-center gap-1">
           <Tag className="h-3 w-3" aria-hidden="true" />
-          <span className="capitalize">{tag.replace(/-/g, ' ')}</span>
+          <span className="capitalize">{formatTag(tag)}</span>
         </Badge>
       ))}
     </div>

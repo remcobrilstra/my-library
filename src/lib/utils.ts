@@ -24,3 +24,7 @@ export function resolveAssetPath(assetPath?: string) {
 
   return `${normalizedBase}${normalizedPath}`;
 }
+
+export function formatTag(tag: string) {
+  return tag.replace(/-/g, ' ');
+}

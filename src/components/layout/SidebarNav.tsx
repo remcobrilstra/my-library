@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { BookOpenCheck, Heart, ListChecks, Sparkles } from 'lucide-react';
+import { BookOpenCheck, Heart, ListChecks, Sparkles, Clock } from 'lucide-react';
 
 import { useBooksContext } from '../../contexts/BooksContext';
 import { cn } from '../../lib/utils';
@@ -21,6 +21,12 @@ export function SidebarNav({ onNavigate }: { onNavigate?: () => void }) {
     () => [
       {
         to: '/',
+        label: 'Timeline',
+        description: 'Your reading journey over time',
+        icon: <Clock className="h-4 w-4" aria-hidden="true" />,
+      },
+      {
+        to: '/my-books',
         label: 'My Books',
         description: 'All titles in your personal stacks',
         icon: <BookOpenCheck className="h-4 w-4" aria-hidden="true" />,
