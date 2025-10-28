@@ -2,7 +2,7 @@ import React from 'react';
 import { CalendarRange, CheckCircle2, Crown, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-import { cn, resolveAssetPath } from '../../lib/utils';
+import { cn, resolveAssetPath, formatTag } from '../../lib/utils';
 import { type BookRecord } from '../../types/book';
 import { Badge } from '../ui/badge';
 import {
@@ -70,7 +70,7 @@ export function BookCard({ book, layout = 'grid', highlightFavorite = true }: Bo
       {book.tags.map((tag) => (
         <Badge key={tag} variant="outline" className="inline-flex items-center gap-1">
           <Tag className="h-3 w-3" aria-hidden="true" />
-          <span className="capitalize">{tag.replace(/-/g, ' ')}</span>
+          <span className="capitalize">{formatTag(tag)}</span>
         </Badge>
       ))}
     </div>
@@ -149,15 +149,15 @@ export function BookCard({ book, layout = 'grid', highlightFavorite = true }: Bo
           </div>
         )}
         {!isListLayout && hasCoverImage && (
-          <div
-            className={cn(
-              'absolute inset-x-0 bottom-0 z-10 h-full translate-y-[calc(100%-6.5rem)] transition-transform duration-500 ease-out',
-              'sm:translate-y-[calc(100%-7rem)]',
-              'group-hover:translate-y-1/2 group-focus-visible:translate-y-1/2'
-            )}
-          >
-            <div className="flex h-full flex-col overflow-hidden bg-white/95 shadow-[0_-24px_48px_-24px_rgba(15,23,42,0.55)] backdrop-blur-sm">
-              <div className="border-t border-border/60 bg-white px-5 py-4 text-sm text-foreground">
+          <div className="absolute inset-x-0 bottom-0 z-10">
+            <div
+              className={cn(
+                'overflow-hidden rounded-t-lg bg-white/95 shadow-[0_-24px_48px_-24px_rgba(15,23,42,0.55)] backdrop-blur-sm transition-[max-height] duration-500 ease-out',
+                'max-h-[6.5rem]',
+                'group-hover:max-h-[60%] group-focus-visible:max-h-[60%]'
+              )}
+            >
+              <div className="border-t border-border/60 px-5 py-4 text-sm text-foreground">
                 <div className="flex items-start justify-between gap-3">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2 text-base font-semibold leading-tight">
@@ -178,14 +178,14 @@ export function BookCard({ book, layout = 'grid', highlightFavorite = true }: Bo
                   )}
                 </div>
               </div>
-              <div className="flex-1 space-y-4 overflow-y-auto px-5 pt-4 pb-5 text-sm text-muted-foreground">
-                <div
-                  className={cn(
-                    'grid gap-3 transition-opacity duration-300 ease-out',
-                    'group-hover:opacity-100 group-focus:opacity-100',
-                    'opacity-0'
-                  )}
-                >
+              <div
+                className={cn(
+                  'px-5 pb-5 text-sm text-muted-foreground transition-[opacity,transform] duration-300 ease-out',
+                  'translate-y-4 opacity-0',
+                  'group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100'
+                )}
+              >
+                <div className="grid gap-3">
                   {finishedRow}
                   {ratingRow}
                   {tagsRow}
