@@ -149,12 +149,12 @@ export function BookCard({ book, layout = 'grid', highlightFavorite = true }: Bo
           </div>
         )}
         {!isListLayout && hasCoverImage && (
-          <div className="absolute inset-x-0 bottom-0 z-10">
+          <div className="absolute inset-x-0 bottom-0 z-10 overflow-hidden">
             <div
               className={cn(
-                'overflow-hidden rounded-t-lg bg-white/95 shadow-[0_-24px_48px_-24px_rgba(15,23,42,0.55)] backdrop-blur-sm transition-[max-height] duration-500 ease-out',
-                'max-h-[6.5rem]',
-                'group-hover:max-h-[60%] group-focus-visible:max-h-[60%]'
+                'rounded-t-lg bg-white/95 shadow-[0_-24px_48px_-24px_rgba(15,23,42,0.55)] backdrop-blur-sm transition-transform duration-500 ease-out',
+                'translate-y-[calc(100%-6.5rem)]',
+                'group-hover:translate-y-0 group-focus-visible:translate-y-0'
               )}
             >
               <div className="border-t border-border/60 px-5 py-4 text-sm text-foreground">
@@ -180,9 +180,9 @@ export function BookCard({ book, layout = 'grid', highlightFavorite = true }: Bo
               </div>
               <div
                 className={cn(
-                  'px-5 pb-5 text-sm text-muted-foreground transition-[opacity,transform] duration-300 ease-out',
-                  'translate-y-4 opacity-0',
-                  'group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100'
+                  'px-5 pb-5 text-sm text-muted-foreground transition-opacity duration-500 ease-out',
+                  'opacity-0',
+                  'group-hover:opacity-100 group-focus-visible:opacity-100'
                 )}
               >
                 <div className="grid gap-3">

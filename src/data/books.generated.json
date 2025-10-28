@@ -17,7 +17,7 @@
       "amazonUrl": "https://www.amazon.com/Brief-History-Intelligence-Humans-Breakthroughs/dp/0063286343",
       "review": "",
       "hasReview": false,
-      "updatedAt": "2025-10-27T20:16:43.840Z"
+      "updatedAt": "2025-10-28T10:54:49.258Z"
     },
     {
       "id": "2025-atomic-habits",
@@ -34,7 +34,7 @@
       "coverImage": "/images/atomic-habits.jpg",
       "review": "",
       "hasReview": false,
-      "updatedAt": "2025-10-27T20:12:46.785Z"
+      "updatedAt": "2025-10-28T10:54:49.258Z"
     },
     {
       "id": "2025-rich-dad-poor-dad",
@@ -51,7 +51,7 @@
       "bolUrl": "https://www.bol.com/nl/nl/f/rich-dad-poor-dad/9300000020235982/",
       "review": "",
       "hasReview": false,
-      "updatedAt": "2025-10-27T20:25:48.137Z"
+      "updatedAt": "2025-10-28T10:54:49.258Z"
     },
     {
       "id": "2025-the-personal-mba",
@@ -87,7 +87,7 @@
       "coverImage": "/images/zero-to-one.jpg",
       "review": "",
       "hasReview": false,
-      "updatedAt": "2025-10-27T20:13:25.489Z"
+      "updatedAt": "2025-10-28T10:54:49.258Z"
     }
   ]
 }
