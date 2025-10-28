@@ -153,7 +153,7 @@ export function TimelinePage() {
         <div className="mb-4 inline-flex items-center justify-center rounded-full bg-gradient-to-br from-purple-500 to-pink-500 p-4 shadow-lg">
           <Sparkles className="h-8 w-8 text-white" />
         </div>
-        <h1 className="mb-3 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-4xl font-bold text-transparent dark:from-purple-400 dark:to-pink-400">
+        <h1 className="mb-3 pb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-4xl font-bold text-transparent dark:from-purple-400 dark:to-pink-400">
           My Reading Journey
         </h1>
         <p className="text-lg text-muted-foreground">

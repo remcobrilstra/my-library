@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-28T10:50:12.729Z",
+  "generatedAt": "2025-10-28T11:16:29.694Z",
   "books": [
     {
       "id": "2025-a-brief-history-of-intelligence",
@@ -17,7 +17,7 @@
       "amazonUrl": "https://www.amazon.com/Brief-History-Intelligence-Humans-Breakthroughs/dp/0063286343",
       "review": "",
       "hasReview": false,
-      "updatedAt": "2025-10-28T10:54:49.258Z"
+      "updatedAt": "2025-10-27T20:16:43.840Z"
     },
     {
       "id": "2025-atomic-habits",
@@ -34,7 +34,7 @@
       "coverImage": "/images/atomic-habits.jpg",
       "review": "",
       "hasReview": false,
-      "updatedAt": "2025-10-28T10:54:49.258Z"
+      "updatedAt": "2025-10-27T20:12:46.785Z"
     },
     {
       "id": "2025-rich-dad-poor-dad",
@@ -51,7 +51,7 @@
       "bolUrl": "https://www.bol.com/nl/nl/f/rich-dad-poor-dad/9300000020235982/",
       "review": "",
       "hasReview": false,
-      "updatedAt": "2025-10-28T10:54:49.258Z"
+      "updatedAt": "2025-10-27T20:25:48.137Z"
     },
     {
       "id": "2025-the-personal-mba",
@@ -65,12 +65,12 @@
         "self-education"
       ],
       "favorite": false,
-      "startedDate": "2025-10-128",
+      "startedDate": "2025-10-28",
       "coverImage": "/images/personal-mba.jpg",
       "amazonUrl": "https://www.amazon.com/dp/1591845572",
       "review": "",
       "hasReview": false,
-      "updatedAt": "2025-10-28T10:48:41.917Z"
+      "updatedAt": "2025-10-28T11:13:10.646Z"
     },
     {
       "id": "2025-zero-to-one",
@@ -87,7 +87,7 @@
       "coverImage": "/images/zero-to-one.jpg",
       "review": "",
       "hasReview": false,
-      "updatedAt": "2025-10-28T10:54:49.258Z"
+      "updatedAt": "2025-10-27T20:13:25.489Z"
     }
   ]
 }
