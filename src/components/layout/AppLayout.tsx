@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Outlet } from 'react-router-dom';
 
 import { BooksProvider } from '../../contexts/BooksContext';
@@ -21,7 +21,7 @@ export function AppLayout() {
   return (
     <BooksProvider>
       <div className="flex min-h-screen flex-col lg:flex-row">
-        <aside className="hidden border-r bg-card/40 lg:flex lg:h-screen lg:w-[var(--sidebar-width)] lg:flex-col">
+        <aside className="hidden border-r bg-card/40 lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[var(--sidebar-width)] lg:flex-col lg:overflow-y-auto">
           <SidebarNav />
         </aside>
 
@@ -41,14 +41,14 @@ export function AppLayout() {
                 <SheetHeader className="sr-only">
                   <SheetTitle>Library navigation</SheetTitle>
                 </SheetHeader>
-                <SidebarNav onNavigate={() => setIsOpen(false)} />
-                <div className="border-t bg-background/80 p-4">
+                <div className="absolute right-4 top-4 z-10">
                   <SheetClose asChild>
-                    <Button className="w-full" variant="ghost">
-                      Close
+                    <Button variant="ghost" size="icon" aria-label="Close navigation">
+                      <X className="h-5 w-5" />
                     </Button>
                   </SheetClose>
                 </div>
+                <SidebarNav onNavigate={() => setIsOpen(false)} />
               </SheetContent>
             </Sheet>
           </div>
