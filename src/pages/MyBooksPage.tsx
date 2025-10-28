@@ -3,8 +3,6 @@ import React from 'react';
 import { BookSearch } from '../components/books/BookSearch';
 import { BookList } from '../components/books/BookList';
 import { PageHeader } from '../components/PageHeader';
-import { Button } from '../components/ui/button';
-import { Badge } from '../components/ui/badge';
 import { Separator } from '../components/ui/separator';
 import { useBooksContext } from '../contexts/BooksContext';
 import { formatTag } from '../lib/utils';
@@ -43,10 +41,6 @@ export function MyBooksPage() {
     });
   }, [books, searchTerm, activeTag]);
 
-  const handleTagToggle = (tag: string) => {
-    setActiveTag((current) => (current === tag ? null : tag));
-  };
-
   return (
     <div className="flex w-full flex-1 flex-col">
       <PageHeader
@@ -69,25 +63,34 @@ export function MyBooksPage() {
           </div>
           {tags.length > 0 && <Separator className="hidden h-8 sm:block" orientation="vertical" />}
           {tags.length > 0 && (
-            <div className="flex flex-1 flex-wrap gap-2">
-              {tags.map(([tag, total]) => (
-                <Button
-                  key={tag}
-                  variant={activeTag === tag ? 'default' : 'outline'}
-                  size="sm"
-                  onClick={() => handleTagToggle(tag)}
-                  className="capitalize"
-                >
-                  <span>{formatTag(tag)}</span>
-                  <Badge variant={activeTag === tag ? 'secondary' : 'outline'} className="ml-2">
-                    {total}
-                  </Badge>
-                </Button>
-              ))}
+            <div className="flex flex-1 flex-wrap items-center gap-2">
+              <label htmlFor="tag-filter" className="text-xs uppercase tracking-wide text-muted-foreground">
+                Filter by tag
+              </label>
+              <select
+                id="tag-filter"
+                value={activeTag ?? ''}
+                onChange={(event) => {
+                  const value = event.target.value;
+                  setActiveTag(value === '' ? null : value);
+                }}
+                className="rounded-md border border-border/70 bg-background px-3 py-2 text-sm text-foreground shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              >
+                <option value="">All tags</option>
+                {tags.map(([tag, total]) => (
+                  <option key={tag} value={tag} className="capitalize">
+                    {`${formatTag(tag)} (${total})`}
+                  </option>
+                ))}
+              </select>
               {activeTag && (
-                <Button variant="ghost" size="sm" onClick={() => setActiveTag(null)}>
-                  Clear tag filter
-                </Button>
+                <button
+                  type="button"
+                  onClick={() => setActiveTag(null)}
+                  className="text-sm font-medium text-primary hover:underline"
+                >
+                  Clear
+                </button>
               )}
             </div>
           )}

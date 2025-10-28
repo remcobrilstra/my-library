@@ -31,7 +31,7 @@ export function BookList({
   return (
     <div className={layout === 'grid' ? 'space-y-6' : 'space-y-8'}>
       {layout === 'grid' ? (
-        <div className="grid gap-6 sm:grid-cols-2">
+  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {books.map((book) => (
             <BookCard key={book.id} book={book} highlightFavorite={highlightFavorite} />
           ))}
