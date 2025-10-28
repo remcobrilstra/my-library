@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-28T10:59:04.474Z",
+  "generatedAt": "2025-10-28T10:50:12.729Z",
   "books": [
     {
       "id": "2025-a-brief-history-of-intelligence",
@@ -70,7 +70,7 @@
       "amazonUrl": "https://www.amazon.com/dp/1591845572",
       "review": "",
       "hasReview": false,
-      "updatedAt": "2025-10-28T10:54:49.258Z"
+      "updatedAt": "2025-10-28T10:48:41.917Z"
     },
     {
       "id": "2025-zero-to-one",
