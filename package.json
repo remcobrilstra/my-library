@@ -54,6 +54,13 @@
       "react-app/jest"
     ]
   },
+  "overrides": {
+    "serialize-javascript": "7.0.5",
+    "nth-check": "3.0.1",
+    "@tootallnate/once": "3.0.1",
+    "underscore": "1.13.8",
+    "webpack-dev-server": "5.2.3"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
